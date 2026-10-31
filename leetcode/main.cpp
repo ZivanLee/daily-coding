@@ -19,7 +19,7 @@ int main()
 		nums.push_back(x);
 	}
 	cin >> target;
-	vector<int> ans = solution1().twoSum(nums, target);
+	vector<int> ans = Solution1().twoSum(nums, target);
 	for(int i = 0; i < ans.size(); i++)
 	{
 		cout << ans[i];

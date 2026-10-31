@@ -1,9 +1,24 @@
+#include <cstddef>
 #include <vector>
 using namespace std;
 
-class solution1{
+struct ListNode {
+	int val;
+	ListNode* next;
+	ListNode() : val(0), next(nullptr) {}
+	ListNode(int x) : val(x), next(nullptr) {}
+	ListNode(int x, ListNode* node) : val(x), next(node) {} 
+};
+
+/* 1. 两数之和 */
+class Solution1{
 public:
 	vector<int> twoSum(vector<int>& nums, int target);
 };
 
+/* 2. 两数相加 */
+class Solution2 {
+public:
+	ListNode* addTwoNumbers(ListNode* head1, ListNode* head2);
+};
 
