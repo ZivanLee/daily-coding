@@ -1,5 +1,5 @@
 .PHONY: clean
-main: solution.hpp main.cpp
+main: solution.cpp main.cpp
 	g++ $^ -o $@
 
 clean: 
