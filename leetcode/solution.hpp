@@ -1,4 +1,4 @@
-#include <cstddef>
+#include <string>
 #include <vector>
 using namespace std;
 
@@ -20,5 +20,11 @@ public:
 class Solution2 {
 public:
 	ListNode* addTwoNumbers(ListNode* head1, ListNode* head2);
+};
+
+/* 3. 无重复字符的最长子串 */
+class Solution3 {
+public:
+	int lengthOfLongestSubstring(string s);
 };
 

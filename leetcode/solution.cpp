@@ -1,8 +1,8 @@
 #include "solution.hpp"
-#include <cstddef>
+
 #include <vector>
 #include <unordered_map>
-
+#include <string>
 vector<int> Solution1::twoSum(vector<int>& nums, int target) {
     unordered_map<int, int> mp;
     vector<int> ans;
@@ -47,4 +47,22 @@ ListNode* Solution2::addTwoNumbers(ListNode* head1, ListNode* head2) {
     ListNode* res = hair->next;
     delete hair;
     return res;
+}
+
+int Solution3::lengthOfLongestSubstring(string s) {
+    int n = s.size();
+    int l = 0; int r = 0;
+    int len = 0;
+    vector<int> dic(128, -1);
+    while(r < n)
+    {
+        if(dic[s[r]] >= l)
+        {
+            l = dic[s[r]]+1;
+        }
+        len = max(len, r-l+1);
+        dic[s[r]] = r;
+        r++;
+    }
+    return len;
 }

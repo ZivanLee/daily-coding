@@ -13,17 +13,20 @@ int main()
 	string s;
 	getline(cin, s);
 	stringstream ss(s);
-	int x;
-	while(ss >> x)
-	{
-		nums.push_back(x);
-	}
-	cin >> target;
-	vector<int> ans = Solution1().twoSum(nums, target);
-	for(int i = 0; i < ans.size(); i++)
-	{
-		cout << ans[i];
-	}
+	// int x;
+	// while(ss >> x)
+	// {
+	// 	nums.push_back(x);
+	// }
+	// cin >> target;
+	// vector<int> ans = Solution1().twoSum(nums, target);
+	// for(int i = 0; i < ans.size(); i++)
+	// {
+	// 	cout << ans[i];
+	// }
+
+	int res = Solution3().lengthOfLongestSubstring(s);
+	cout << res;
 	cout << endl;
 	return 0;
 }
