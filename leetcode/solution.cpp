@@ -66,3 +66,57 @@ int Solution3::lengthOfLongestSubstring(string s) {
     }
     return len;
 }
+
+double Solution4::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
+{
+    int n1 = nums1.size();
+    int n2 = nums2.size();
+    int total_length = n1+n2;
+    int k;
+    
+    auto findKth = [&] (int k)->int {
+        int offset1 = 0, offset2 = 0;
+        while(1)
+        {
+            if(offset1 == n1)
+            {
+                return nums2[offset2+k-1];
+            }
+            if(offset2 == n2)
+            {
+                return nums1[offset1+k-1];
+            }
+            if(k == 1)
+            {
+                return min(nums1[offset1], nums2[offset2]);
+            }
+
+            // 正常情况
+            int step1 = min(k/2, n1-offset1);
+            int step2 = min(k/2, n2-offset2);
+
+            if(nums1[offset1+step1-1] <= nums2[offset2+step2-1])
+            {
+                offset1 += step1;
+                k = k-step1;
+            }
+            else 
+            {
+                offset2 += step2;
+                k = k-step2;
+            }
+        }
+    };
+
+    if(total_length%2)
+    {
+        k = total_length/2+1;
+        return findKth(k);
+    }
+    else
+    {
+        k = total_length/2;
+        return (double)(findKth(k) + findKth(k+1)) / 2;
+    }
+
+}

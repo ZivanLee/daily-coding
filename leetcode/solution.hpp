@@ -28,3 +28,8 @@ public:
 	int lengthOfLongestSubstring(string s);
 };
 
+/* 4. 寻找两个正序数组的中位数 */
+class Solution4 {
+public:
+	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
+};
