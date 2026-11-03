@@ -120,3 +120,26 @@ double Solution4::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
     }
 
 }
+
+string Solution5::longestPalindrome(string s) {
+    int n = s.size();
+    vector<vector<bool>> dp(n, vector<bool>(n, false));
+    int len = 0;
+    int start;
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = i; j >= 0; j--)
+        {
+            if(s[i] == s[j] && (i - j <= 2 || dp[i-1][j+1]))
+            {
+                dp[i][j] = true;
+                if(i - j + 1 > len)
+                {
+                    len = i - j + 1;
+                    start = j;
+                }
+            }
+        }
+    }
+    return s.substr(start, len);
+}

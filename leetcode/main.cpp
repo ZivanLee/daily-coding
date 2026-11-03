@@ -10,8 +10,8 @@ string question[] = {
 	"1. 两数之和",
 	"2. 两数相加",
 	"3. 无重复字符的最长子串",
-	"4. 寻找两个正序数组的中位数"
-
+	"4. 寻找两个正序数组的中位数",
+	"5. 最长回文子串"
 };
 
 int main()
@@ -34,6 +34,7 @@ int main()
 	switch(q_num)
 	{
 		case 4:
+		{
 			vector<int> nums1, nums2;
 			string s;
 			cout << "nums1 = ";
@@ -54,6 +55,22 @@ int main()
 			
 			double res = Solution4().findMedianSortedArrays(nums1, nums2);
 			printf("%.5f\n", res);
+			break;
+		}
+			
+		case 5:
+		{
+			string s;
+			cout << "s = ";
+			getline(cin, s);
+			string res = Solution5().longestPalindrome(s);
+			cout << res;
+			cout << endl;
+			break;
+		}
+		default:
+			cout << "没有此题！" << endl;
+			break;
 
 
 	}

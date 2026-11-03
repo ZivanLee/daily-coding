@@ -33,3 +33,9 @@ class Solution4 {
 public:
 	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
 };
+
+/* 5. 最长回文子串 */
+class Solution5 {
+public:
+	string longestPalindrome(string s);
+};
