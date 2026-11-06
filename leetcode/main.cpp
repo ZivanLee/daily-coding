@@ -11,7 +11,8 @@ string question[] = {
 	"2. 两数相加",
 	"3. 无重复字符的最长子串",
 	"4. 寻找两个正序数组的中位数",
-	"5. 最长回文子串"
+	"5. 最长回文子串",
+	"6. Z 字形变换"
 };
 
 int main()
@@ -66,6 +67,18 @@ int main()
 			string res = Solution5().longestPalindrome(s);
 			cout << res;
 			cout << endl;
+			break;
+		}
+		case 6:
+		{
+			string s;
+			cout << "s = ";
+			getline(cin, s);
+			int numRows;
+			cout << "numRows = ";
+			cin >> numRows;
+			string res = Solution6().convert(s, numRows);
+			cout << res << endl;
 			break;
 		}
 		default:

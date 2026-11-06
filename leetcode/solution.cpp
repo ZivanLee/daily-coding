@@ -1,5 +1,5 @@
 #include "solution.hpp"
-
+#include <iostream>
 #include <vector>
 #include <unordered_map>
 #include <string>
@@ -142,4 +142,42 @@ string Solution5::longestPalindrome(string s) {
         }
     }
     return s.substr(start, len);
+}
+
+string Solution6::convert(string s, int numRows) {
+    int n = s.size();
+    int t = 2*numRows - 2;
+    int cols = (n/t+1)*(numRows-1);
+    vector<vector<char>> res(numRows, vector<char>(cols, ' '));
+    int index = 0;
+    int i = 0, j = 0;
+    while(index < n)
+    {
+        res[i][j] = s[index];
+        if(index%t < numRows-1)
+        {
+            i++;
+        }
+        else
+        {
+            i--;
+            j++;
+        }
+        index++;
+    }
+    string ans;
+    for(int i = 0; i < numRows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            cout << res[i][j];
+            if(j != cols-1)
+                cout << ' ';
+            if(res[i][j] != ' ')
+                ans.push_back(res[i][j]);
+        }
+        cout << endl;
+    }
+
+    return ans;
 }

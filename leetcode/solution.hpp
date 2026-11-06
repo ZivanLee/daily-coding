@@ -39,3 +39,9 @@ class Solution5 {
 public:
 	string longestPalindrome(string s);
 };
+
+/* Z 字形变换 */
+class Solution6 {
+public:
+	string convert(string s, int numRows);
+};
