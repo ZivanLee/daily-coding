@@ -40,8 +40,14 @@ public:
 	string longestPalindrome(string s);
 };
 
-/* Z 字形变换 */
+/* 6. Z 字形变换 */
 class Solution6 {
 public:
 	string convert(string s, int numRows);
+};
+
+/* 9. 回文数 */
+class Solution9 {
+public:
+	bool isPalindrome(int x);
 };

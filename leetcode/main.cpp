@@ -12,7 +12,8 @@ string question[] = {
 	"3. 无重复字符的最长子串",
 	"4. 寻找两个正序数组的中位数",
 	"5. 最长回文子串",
-	"6. Z 字形变换"
+	"6. Z 字形变换",
+	"9. 回文数"
 };
 
 int main()
@@ -79,6 +80,21 @@ int main()
 			cin >> numRows;
 			string res = Solution6().convert(s, numRows);
 			cout << res << endl;
+			break;
+		}
+		case 9:
+		{
+			cout << "x = ";
+			int x;
+			cin >> x;
+			bool res = Solution9().isPalindrome(x);
+			if(res)
+			{
+				cout << "true" << endl;
+			}
+			else {
+				cout << "false" << endl;
+			}
 			break;
 		}
 		default:
