@@ -13,7 +13,8 @@ string question[] = {
 	"4. 寻找两个正序数组的中位数",
 	"5. 最长回文子串",
 	"6. Z 字形变换",
-	"9. 回文数"
+	"9. 回文数",
+	"12. 整数转罗马数字"
 };
 
 int main()
@@ -95,6 +96,15 @@ int main()
 			else {
 				cout << "false" << endl;
 			}
+			break;
+		}
+		case 12:
+		{
+			cout << "num = ";
+			int num;
+			cin >> num;
+			string res = Solution12().intToRoman(num);
+			cout << res << endl;
 			break;
 		}
 		default:

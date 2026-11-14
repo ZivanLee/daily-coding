@@ -51,3 +51,8 @@ class Solution9 {
 public:
 	bool isPalindrome(int x);
 };
+
+class Solution12 {
+public: 
+	string intToRoman(int num);
+};
